@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+#sky-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.container {
+  height: 80vh;
+  width: 80vw;
+  border-radius: 30px;
+  background: #082a40d8;
+  justify-content: center;
+  align-items: center;
+  padding: 28px 32px;
+  margin: 10vh auto;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  left: 10vw;
+}
+
+/*bagian kiri*/
+.container-left {
+  width: 50%;
+  height: fit-content;
+}
+
+.container-left .title {
+  width: 230px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1vh auto;
+}
+
+.search-box {
+  width: 80%;
+  height: 10.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 2vw;
+  margin: 3vh auto;
+  border-radius: 18px;
+}
+
+.search-box input {
+  color: #06283d;
+  width: 80%;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-left: 32px;
+}
+
+.search-box input::placeholder {
+  font-size: 20px;
+  font-weight: 500;
+  color: #06283d;
+  text-transform: capitalize;
+}
+
+.search-box button {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  color: #06283d;
+  background: #dff6ff;
+  border-radius: 50%;
+  font-size: 22px;
+  transition: 0.4s ease;
+}
+
+.search-box button:hover {
+  color: #fff;
+  background: #06283d;
+}
+
+.search-box i {
+  position: absolute;
+  color: #06283d;
+  font-size: 28px;
+}
+
+/*bagian kanan*/
+.container-right {
+  width: 50%;
+  height: fit-content;
+}
+
+.weather-box {
+  text-align: center;
+}
+
+.weather-box img {
+  width: 30%;
+  margin-bottom: 3%;
+}
+
+.weather-box #temperature {
+  position: relative;
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.weather-box #description {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.weather-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto 0px;
+}
+
+.weather-details .humidity,
+.weather-details .wind {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100px;
+}
+
+.weather-details .humidity {
+  padding-left: 20px;
+  justify-content: center;
+}
+
+.weather-details .wind {
+  padding-right: 20px;
+  justify-content: center;
+}
+
+.weather-details i {
+  font-size: 26px;
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+.weather-details span {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.weather-details p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+/*Error Handle*/
+#not-found {
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+#not-found img {
+  width: 50%;
+}
+
+#not-found p {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 1125px) {
+  .container {
+    display: block;
+  }
+
+  .container-left,
+  .container-right {
+    width: auto;
+  }
+
+  .container-right {
+    display: flex;
+  }
+
+  .weather-details .humidity,
+  .weather-details .wind {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-right {
+    display: block;
+  }
+
+  .weather-details .humidity,
+  .weather-details .wind {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 454px) {
+  .search-box {
+    width: 100%;
+  }
+
+  .search-box i {
+    display: none;
+  }
+  .search-box input {
+    padding: 2%;
+    text-overflow: ellipsis;
+  }
+
+  .search-box button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .weather-details {
+    display: block;
+    text-align: center;
+  }
+
+  .weather-details .humidity,
+  .weather-details .wind {
+    margin: 6vh auto;
+    padding: 0;
+    width: 100%;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .container-left .title {
+    width: fit-content;
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .container-left .title {
+    width: fit-content;
+    font-size: 3.5vw;
+  }
+}
