@@ -98,6 +98,12 @@ body {
   font-size: 28px;
 }
 
+.city-name{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 /*bagian kanan*/
 .container-right {
   width: 50%;
@@ -223,6 +229,9 @@ body {
   .weather-details .humidity,
   .weather-details .wind {
     display: flex;
+  }
+  .city-name{
+    font-size: 1.5rem;
   }
 }
 
