@@ -2,11 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather API</title>
+    <link rel="icon" href="images/weather-app2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <video class="sky-video" autoplay loop src="images/sky.mp4"></video>
+    <!-- <h1 class="weather-app-title">weather radar <img src="images/weather-app2.png" alt="Weather App Icon"></h1> -->
+    <div class="container">
+
+        <!-- Location Search -->
+        <div class="location-search">
+            <h1 class="weather-app-title">weather radar <img src="images/weather-app2.png" alt="Web Image"></h1>
+            <div class="search-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <input class="input-search" type="text" placeholder="Enter your location">
+                <button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
+            </div>
+        </div>
+
+        <!-- Weather Box -->
+        <div class="weather-box">
+            <img class="image" src="" alt="Weather Image">
+
+            <div class="weather-result">
+                <p class="temperature"></p>
+                <p class="description"></p>
+            </div>
+
+            <div class="result-details">
+                <div class="humidity">
+                    <i class="fa-sharp fa-solid fa-droplet"></i>
+                    <div class="text">
+                        <span id="humidity"></span>
+                        <p>humidity</p>
+                    </div>
+                </div>
+
+                <div class="wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <div class="text">
+                        <span id="wind"></span>
+                        <p>wind speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Handling (Location) -->
+        <div class="location-error">
+            <img src="/images/404-2.png" alt="Error Image">
+            <p>Oops! location not found :(</p>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/595a890311.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
