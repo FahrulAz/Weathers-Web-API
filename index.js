@@ -9,11 +9,13 @@ const description = document.querySelector('.description');
 const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind');
 
+const hideBtn = document.getElementById('hideBtn');
+
 const location_error = document.querySelector('.location-error');
 
 const celcius_convertion = 273.15;
 
-// sumber = https://openweathermap.org/
+// data = https://openweathermap.org/
 async function checkWeather(city){
     const api_key = "ca6a674c5da9fdb2ac3b0647745e3035";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
@@ -44,7 +46,7 @@ async function checkWeather(city){
         case 'Rain':
             image.src = "/images/rain.png";
             break;
-        case 'Mist':
+        case 'Haze':
             image.src = "/images/mist.png";
             break;
         case 'Snow':
@@ -54,9 +56,22 @@ async function checkWeather(city){
     }
 
     console.log(weather_data);
+    showWeatherBox();
 }
 
-// Enter key
+// transition result
+function showWeatherBox() {
+    weather_box.style.opacity = 1;
+    weather_box.style.height = 'min-content';
+    weather_box.style.transitionDelay = '0.2s';
+}
+
+function hideWeatherBox() {
+    weather_box.style.opacity = 0;
+    weather_box.style.height = 0;
+}
+
+// enter key (alternatif)
 function handleEnterKeyPress(event) {
     if (event.key === 'Enter') {
         checkWeather(inputSearch.value);
@@ -67,4 +82,8 @@ inputSearch.addEventListener('keypress', handleEnterKeyPress);
 
 searchBtn.addEventListener('click', () => {
     checkWeather(inputSearch.value);
+});
+
+hideBtn.addEventListener('click', () => {
+    hideWeatherBox();
 });
