@@ -36,6 +36,13 @@ search.addEventListener('click',() => {
             return;
         }
         else {
+            const cloneWeather = document.querySelectorAll('.active-clone');
+            if (cloneWeather.length > 0) {
+                cloneWeather.forEach(clone => {
+                    clone.remove();
+                });
+            }
+
             cityHide.textContent = city;
 
             container.style.height = '555px';
@@ -70,9 +77,9 @@ search.addEventListener('click',() => {
             }
     
             temperature.innerHTML = `${parseInt(data.main.temp)}<span>&deg;c</span>`;
-            description.innerHTML = `${data.weather[0].description}`;
-            humidity.innerHTML =  `${data.main.humidity}%`;
-            wind.innerHTML = `${parseInt(data.wind.speed)}Km/h`;
+            description.innerHTML = `${data.weather[0].main}`;
+            humidity.innerHTML =  `${data.main.humidity} %`;
+            wind.innerHTML = `${data.wind.speed} Km/h`;
 
             const infoWeather = document.querySelector('.info-weather');
             const infoHumidity = document.querySelector('.info-humidity');
@@ -121,5 +128,6 @@ search.addEventListener('click',() => {
         }
 
       })
+      document.querySelector('.input-search').value = '';
 });
 
