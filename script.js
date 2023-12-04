@@ -139,7 +139,7 @@ document.querySelector('#input-src').addEventListener('change', debounce( () => 
 
       })
       document.querySelector('#input-src').value = '';
-  }, 2000))
+  }, 1500))
 
 
   
