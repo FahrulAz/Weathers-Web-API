@@ -31,6 +31,7 @@ document.querySelector('#input-src').addEventListener('change', debounce( () => 
             container.style.height = '400px';
             weatherBox.classList.remove('active');
             weatherDetail.classList.remove('active');
+            cityHide.style.display = 'none';
             error.classList.add('active');
             return;
         }
@@ -52,7 +53,7 @@ document.querySelector('#input-src').addEventListener('change', debounce( () => 
                 });
             }
 
-            cityHide.style.display = 'block'
+            cityHide.style.display = 'block';
             cityHide.textContent = `${data.name}, ${data.sys.country}`;
 
             container.style.height = '555px';
