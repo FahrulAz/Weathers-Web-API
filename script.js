@@ -16,9 +16,9 @@ function debounce(callback, wait) {
   }
 
 
-document.querySelector('.input-search').addEventListener('change', debounce( () => {
+document.querySelector('#input-src').addEventListener('change', debounce( () => {
     const APIKey = '19fb58883aa212835fb6c90c6d10fe03';
-    let city = document.querySelector('.input-search').value;
+    let city = document.querySelector('#input-src').value;
 
     if (city == '')
     return;
@@ -138,15 +138,15 @@ document.querySelector('.input-search').addEventListener('change', debounce( () 
         }
 
       })
-      document.querySelector('.input-search').value = '';
-  }, 1000))
+      document.querySelector('#input-src').value = '';
+  }, 2000))
 
 
   
 // search.addEventListener('click',() => {
 
 //     const APIKey = '19fb58883aa212835fb6c90c6d10fe03';
-//     let city = document.querySelector('.input-search').value;
+//     let city = document.querySelector('#input-src').value;
 
 //     if (city == '')
 //     return;
@@ -266,6 +266,6 @@ document.querySelector('.input-search').addEventListener('change', debounce( () 
 //         }
 
 //       })
-//       document.querySelector('.input-search').value = '';
+//       document.querySelector('#input-src').value = '';
 // });
 
