@@ -67,29 +67,23 @@ document.querySelector('#input-src').addEventListener('change', debounce( () => 
 
             switch (data.weather[0].main) {
                 case 'Clear':
-                    image.src = 'images/clear-img.png'
+                    image.src = 'images/clear.png'
                     break;
                 case 'Rain':
-                case 'Drizzle':
-                    image.src = 'images/rain-drizzle-img.png'
-                    break;
-                case 'Thunderstorm':
-                    image.src = 'images/thunderstorm-img.png'
+                    image.src = 'images/rain.png'
                     break;
                 case 'Snow':
-                    image.src = 'images/snow-img.png'
+                    image.src = 'images/snow.png'
                     break;
                 case 'Clouds':
-                    image.src = 'images/cloud-img.png'
+                    image.src = 'images/cloud.png'
                     break;
-                case 'Fog':
                 case 'Mist':
-                case 'Haze':
-                case 'Smoke':
-                case 'Dust':
-                    image.src = 'images/fog-dust-img.png';
+                    image.src = 'images/mist.png';
                     break;
-            
+                
+                default:
+                    image.src = 'images/cloud.png'
             }
     
             temperature.innerHTML = `${parseInt(data.main.temp)}<span>&deg;c</span>`;
