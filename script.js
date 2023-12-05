@@ -15,7 +15,6 @@ function debounce(callback, wait) {
     };
   }
 
-
 document.querySelector('#input-src').addEventListener('change', debounce( () => {
     const APIKey = '19fb58883aa212835fb6c90c6d10fe03';
     let city = document.querySelector('#input-src').value;
@@ -68,27 +67,33 @@ document.querySelector('#input-src').addEventListener('change', debounce( () => 
 
             switch (data.weather[0].main) {
                 case 'Clear':
-                    image.src = 'images/clear.png'
+                    image.src = 'images/clear-img.png'
                     break;
                 case 'Rain':
-                    image.src = 'images/rain.png'
+                case 'Drizzle':
+                    image.src = 'images/rain-drizzle-img.png'
+                    break;
+                case 'Thunderstorm':
+                    image.src = 'images/thunderstorm-img.png'
                     break;
                 case 'Snow':
-                    image.src = 'images/snow.png'
+                    image.src = 'images/snow-img.png'
                     break;
                 case 'Clouds':
-                    image.src = 'images/cloud.png'
+                    image.src = 'images/cloud-img.png'
                     break;
+                case 'Fog':
                 case 'Mist':
-                    image.src = 'images/mist.png'
+                case 'Haze':
+                case 'Smoke':
+                case 'Dust':
+                    image.src = 'images/fog-dust-img.png';
                     break;
             
-                default:
-                    image.src = 'images/cloud.png'
             }
     
             temperature.innerHTML = `${parseInt(data.main.temp)}<span>&deg;c</span>`;
-            description.innerHTML = `${data.weather[0].main}`;
+            description.innerHTML = `${data.weather[0].description}`;
             humidity.innerHTML =  `${data.main.humidity} %`;
             wind.innerHTML = `${data.wind.speed} Km/h`;
 

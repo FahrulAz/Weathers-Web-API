@@ -33,6 +33,7 @@ body{
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 16px;
     padding: 20px;
+    transition: height .6s ease;
 }
 
 .search-box{
@@ -129,7 +130,7 @@ body{
 }
 
 .weather-box img {
-    width: 60%;
+    width: 40%;
 }
 
 .weather-box .temperature {
@@ -206,6 +207,7 @@ body{
 .weather-details p {
     font-size: 14px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
 .not-found{

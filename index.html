@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather API</title>
-    <link rel="icon" href="images/cloud.png" type="image/x-icon">
+    <!-- App Icon -->
+    <link rel="icon" href="images/app-img.png" type="image/x-icon">
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
@@ -14,21 +15,24 @@
 <body>
     <video autoplay loop src="images/sky.mp4" id="sky-video"></video>
     <div class="container">
+
+        <!-- Location Search -->
         <div class="search-box">
             <i class="bx bxs-map"></i>
-            <input id="input-src" class="input-search" type="text" placeholder="enter your loc">
+            <input id="input-src" class="input-search" type="text" placeholder="enter your location">
             <!-- <button class="btn-search bx bx-search"></button> -->
         </div>
 
         <p class="city-hide">city hide</p>
 
+        <!-- Weather Result -->
         <div class="weather-box">
             <div class="box">
                 <div class="info-weather">
                     <div class="weather">
-                        <img class="weather-img" src="images/cloud.png" alt="icon cloud">
-                        <p class="temperature">0<span>&deg;c</span></p>
-                        <p class="description">Clouds</p>
+                        <img class="weather-img" src="" alt="weather icon">
+                        <p class="temperature"></p>
+                        <p class="description"></p>
                     </div>
                 </div>
             </div>
@@ -38,7 +42,7 @@
                 <i class="bx bx-water"></i>
                 <div class="text">
                     <div class="info-humidity">
-                        <span>0%</span>
+                        <span></span>
                     </div>
                     <p>humidity</p>
                 </div>
@@ -48,17 +52,18 @@
                 <i class="bx bx-wind"></i>
                 <div class="text">
                     <div class="info-wind">
-                        <span>0Km/h</span>
+                        <span></span>
                     </div>
-                    <p>Wind Speed</p>
+                    <p>wind speed</p>
                 </div>
             </div>
         </div>
 
+        <!-- Error Handling (Not Found Location) -->
         <div class="not-found">
             <div class="box">
-                <img src="images/404.png" alt="error">
-                <p>Location not Found</p>
+                <img src="images/404-img.png" alt="404 image">
+                <p>Oops! location not found :(</p>
             </div>
         </div>
     </div>
