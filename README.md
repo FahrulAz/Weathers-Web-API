@@ -11,6 +11,6 @@ VINDY FELYCIA LOVERITA
 
 ---
 ## Preview App Here
--
+demo here: https://weathers-web-api.vercel.app/
 
 
