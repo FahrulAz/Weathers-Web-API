@@ -1,60 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Weather App</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+    <link rel="icon" href="images/cloud.png" type="image/x-icon">
 
-  <body>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
     <video autoplay loop src="images/sky.mp4" id="sky-video"></video>
     <div class="container">
-      <div class="container-left">
-        <div class="title">
-          <h1>Weather App <i class="fa-sharp fa-solid fa-cloud" style="color: #ffffff"></i></h1>
-        </div>
         <div class="search-box">
-          <i class="fa-solid fa-location-dot"></i>
-          <input type="text" placeholder="Enter your location" />
-          <button class="fa-solid fa-magnifying-glass"></button>
+            <i class="bx bxs-map"></i>
+            <input id="input-src" class="input-search" type="text" placeholder="enter your loc">
+            <!-- <button class="btn-search bx bx-search"></button> -->
         </div>
-      </div>
-      <div class="container-right">
+
+        <p class="city-hide">city hide</p>
+
         <div class="weather-box">
-          <img id="weather-image" src="/images/clear.png" />
-          <p id="temperature">Temp</p>
-          <p id="description">Cerah</p>
+            <div class="box">
+                <div class="info-weather">
+                    <div class="weather">
+                        <img class="weather-img" src="images/cloud.png" alt="icon cloud">
+                        <p class="temperature">0<span>&deg;c</span></p>
+                        <p class="description">Clouds</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
         <div class="weather-details">
-          <div class="humidity">
-            <i class="fa-solid fa-water"></i>
-            <div class="text">
-              <span id="humidity">0</span>
-              <p>Humidity</p>
+            <div class="humidity">
+                <i class="bx bx-water"></i>
+                <div class="text">
+                    <div class="info-humidity">
+                        <span>0%</span>
+                    </div>
+                    <p>humidity</p>
+                </div>
             </div>
-          </div>
-          <div class="wind">
-            <i class="fa-solid fa-wind"></i>
-            <div class="text">
-              <span id="wind">0</span>
-              <p>Wind Speed</p>
+
+            <div class="wind">
+                <i class="bx bx-wind"></i>
+                <div class="text">
+                    <div class="info-wind">
+                        <span>0Km/h</span>
+                    </div>
+                    <p>Wind Speed</p>
+                </div>
             </div>
-          </div>
         </div>
 
-        <!--Error Handling-->
-        <div id="not-found">
-          <img src="/images/404.png" />
-          <p>Oops! Invalid location :(</p>
+        <div class="not-found">
+            <div class="box">
+                <img src="images/404.png" alt="error">
+                <p>Location not Found</p>
+            </div>
         </div>
-        <!--Error Handling-->
-      </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
